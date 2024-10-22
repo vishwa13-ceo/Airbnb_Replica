@@ -8,9 +8,14 @@ const listingSchema = new Schema({
     },
     description : String,
     image :{
-        type:String,
-        default:"https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50",
-        set:(v)=> v==="" ? "https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50" : v,
+        filename: { type: String, required: true },
+        url: {
+            type: String,
+            required: true,
+            default: "https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50",
+            set: (v) =>
+                v === "" ? "https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50" : v,
+        },
     },
     price:Number,
     location:String,
