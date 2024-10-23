@@ -8,10 +8,10 @@ const listingSchema = new Schema({
     },
     description : String,
     image :{
-        filename: { type: String, required: true },
+        filename: { type: String },
         url: {
             type: String,
-            required: true,
+            // required: true,
             default: "https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50",
             set: (v) =>
                 v === "" ? "https://unsplash.com/photos/a-cross-on-a-hill-under-a-night-sky-filled-with-stars-O8hC2HNjL50" : v,
